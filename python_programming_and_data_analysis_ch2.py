@@ -20,6 +20,8 @@ r2 = math.sqrt(2)
 # 計算結果の確認 (2の平方根)
 print(r2)
 
+"""sqrt = 平方根(square root)"""
+
 # ライブラリ中の特定の関数のみ利用する場合は下記の方法も可
 from math import sqrt
 
@@ -44,6 +46,11 @@ y = np.sqrt(x)
 
 # 結果確認 (1から10までの平方根が同時に計算できている)
 print(y)
+
+"""np.linspace()関数は、0から2まで（**両端を含む**）の範囲を11等分した間隔で等間隔の値を生成
+
+NumPyで連番や等差数列など等間隔の配列 ndarray を生成するには、 numpy.arange() か numpy.linspace() を使う。 arange() は間隔（公差）を指定、 linspace() は要素数を指定するという違いがある。
+"""
 
 # 外部ライブラリのバージョン確認方法
 import numpy
