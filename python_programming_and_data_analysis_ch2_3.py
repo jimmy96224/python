@@ -78,7 +78,7 @@ plt.show()
 
 #　やや複雑な散布図
 
-# scatter関数呼び出し　（yの値で色を変える）
+# scatter関数呼び出し　（yの値で色を変える,c=color）
 plt.scatter(x[:,0], x[:,2], c=y, cmap='rainbow')
 
 # 方眼表示
