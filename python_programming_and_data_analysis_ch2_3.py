@@ -154,6 +154,11 @@ iris = load_iris()
 x, y = iris.data, iris.target
 columns = iris.feature_names
 print(x[:5])
+print(columns)
+
+print(iris.DESCR)
+
+print(iris.target_names)
 
 """#### 複数グラフ描画"""
 
@@ -197,11 +202,42 @@ plt.figure(figsize=(u*N, u*N))
 
 for i in range(N):
     for j in range(N):
-         # この部分をコーディングします
+        # この計算は、図2-3-2をヒントに考える
+        k = i * 4 + j + 1
+        ax = plt.subplot(N, N, k)
 
+        # 以下の3行は、2.3.5項　コード2-3-12参照
+        ax.scatter(x[:, i], x[:, j], c=y, cmap='rainbow')
+        ax.set_title(columns[i] + ' vs ' + columns[j])
+        ax.grid()
 
+# 隣接オブジェクトとぶつからないようにする
+plt.tight_layout()
 
+# 表示
+plt.show()
 
+print(N)
+
+# 項目数の計算
+N = x.shape[1]
+
+# figsize計算用パラメータ(1要素あたりの大きさ)
+u = 5
+
+#  描画領域全体の設定
+plt.figure(figsize=(u*N, u*N))
+
+for i in range(N):
+    for j in range(N):
+        # この計算は、図2-3-2をヒントに考える
+        k = i * 4 + j + 1
+        ax = plt.subplot(N, N, k)
+
+        # 以下の3行は、2.3.5項　コード2-3-12参照
+        ax.scatter(x[:, i], x[:, j], c=y, cmap='rainbow')
+        ax.set_title(columns[i] + ' vs ' + columns[j])
+        ax.grid()
 
 # 隣接オブジェクトとぶつからないようにする
 plt.tight_layout()
