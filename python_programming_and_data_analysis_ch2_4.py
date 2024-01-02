@@ -54,6 +54,7 @@ from IPython.display import display
 # パラメータ初期化
 
 # データフレームでの表示精度
+# 浮動小数点数型のデータ表示を小数点以下４桁で固定
 pd.options.display.float_format = '{:.4f}'.format
 
 # データフレームですべての項目を表示
