@@ -88,6 +88,9 @@ print()
 # display関数による整形表示
 display(df1)
 
+print()
+print(df1)
+
 # データフレームの各部品表示
 
 # 列インデックスと行インデックス
@@ -194,6 +197,8 @@ display(df5)
 # headメソッドで先頭n行の抽出
 display(df2.head(2))
 
+display(df2.tail(3))
+
 # index1: 「性別が男]の判断
 index1 = df2['性別'] == '男'
 print(index1)
@@ -201,6 +206,10 @@ print(index1)
 # index1で行を絞り込む
 df6 = df2[index1]
 display(df6)
+
+index10 = df2['性別'] != '男'
+df60 = df2[index10]
+display(df60)
 
 # まとめて1行で表現
 df7 = df2[df2['性別'] == '男']
@@ -312,15 +321,33 @@ data2 = [
 columns=['氏名', '性別', '身長', '体重']
 
 # (1)の解答
-df1 =
-df2 =
+df1 = pd.DataFrame(
+    data1, columns=columns
+)
+df2 = pd.DataFrame(
+    data2, columns=columns
+)
 
 # (1)の結果確認
 display(df1)
 display(df2)
 
 # (2)の解答
-df3 =
+df3 = df1.append(
+    df2,
+    ignore_index=True
+)
+
+
+
+# (2)の結果確認
+display(df3)
+
+# (2)の解答
+df3 = pd.concat(
+    [df1, df2], axis=0,
+    # ignore_index=True
+)
 
 
 
