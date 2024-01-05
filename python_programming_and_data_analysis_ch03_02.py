@@ -203,10 +203,47 @@ url = 'https://raw.githubusercontent.com/makaishi2/samples/main/data/ch03-02-exa
 """
 
 # 次の行を実装します
-df4 =
+columns=['ID', '氏名', '性別', '身長', '体重']
+
+df4 = pd.read_csv(
+    url, skiprows=6, sep=',', header=  None , names=columns , index_col='ID'
+)
 
 
 
 # 結果確認
 display(df4)
 
+# 次の行を実装します
+
+df4 = pd.read_csv(
+    'ch03-02-exam.tsv', skiprows=6, sep='\t', dtype=object
+)
+
+
+
+# 結果確認
+display(df4)
+
+
+
+# 次の行を実装します
+
+df4 = pd.read_csv(
+    'ch03-02-exam.tsv', skiprows=6, sep='\t'
+)
+
+
+
+# 結果確認
+display(df4)
+
+# 別解
+# このように列単位でdtype指定をすると、他の項目に影響を与えないです
+# 文字列であることを明示的に示す場合objectの代わりにstrを使います
+df5 = pd.read_csv(
+    'ch03-02-exam.tsv',
+    header=6, sep='\t', dtype={'ID': str})
+
+# 結果確認
+display(df5)
